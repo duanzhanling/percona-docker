@@ -1,10 +1,6 @@
 FROM centos:7
 MAINTAINER Percona Development <info@percona.com>
 
-RUN groupadd -g 1001 mysql
-RUN useradd -u 1001 -r -g 1001 -s /sbin/nologin \
-		-c "Default Application User" mysql
-
 # check repository package signature in secure way
 RUN export GNUPGHOME="$(mktemp -d)" \
 	&& gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 430BDF5C56E7C94E848EE60C1C4CBDCDCD2EFD2A \
